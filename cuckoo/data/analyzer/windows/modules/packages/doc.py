@@ -27,5 +27,5 @@ class DOC(Package):
     def start(self, path):
         libreOffice = self.get_path("LibreOffice")
         return self.execute(
-            libreOffice, "\"%s\"" % path
+            libreOffice, args=[path], trigger="file:%s" % path
         )
