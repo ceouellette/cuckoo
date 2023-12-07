@@ -13,17 +13,6 @@ class DOC(Package):
         ("ProgramFiles", "LibreOffice", "program", "soffice.exe"),
     ]
 
-    REGKEYS = [
-        [
-            HKEY_CURRENT_USER,
-            "Software\\Policies\\LibreOffice\\org.openoffice.Office.Common\\Security\\Scripting",
-            {
-                "DisableMacroExecution": 0,
-                "MacroSecurityLevel": 0,
-            },
-        ],
-    ]
-
     def start(self, path):
         libreOffice = self.get_path("LibreOffice")
         return self.execute(
