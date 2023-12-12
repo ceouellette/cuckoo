@@ -25,6 +25,6 @@ class Python(Package):
         # python = self.get_path("Python")
         arguments = self.options.get("arguments", "")
 
-        args = "C:\\Program Files\\Python37\\python.exe"
+        args = ["C:\\Program Files\\Python37\\python.exe"]
         args += [path] + shlex.split(arguments)
         return self.execute("cmd.exe", args=args, trigger="file:%s" % path)
