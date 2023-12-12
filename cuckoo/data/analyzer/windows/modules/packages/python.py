@@ -10,21 +10,21 @@ from lib.common.abstracts import Package
 class Python(Package):
     """Python analysis package."""
 
-    PATHS = [
-        ("System32", "cmd.exe"),
-        # ("HomeDrive", "Program Files", "Python37", "python.exe"),
-        # ("HomeDrive", "Python24", "python.exe"),
-        # ("HomeDrive", "Python25", "python.exe"),
-        # ("HomeDrive", "Python26", "python.exe"),
-        # ("HomeDrive", "Python27", "python.exe"),
-        # ("HomeDrive", "Python32", "python.exe"),
-        # ("HomeDrive", "Python33", "python.exe"),
-        # ("HomeDrive", "Python34", "python.exe"),
-    ]
+    # PATHS = [
+    #     ("HomeDrive", "Program Files", "Python37", "python.exe"),
+    #     ("HomeDrive", "Python24", "python.exe"),
+    #     ("HomeDrive", "Python25", "python.exe"),
+    #     ("HomeDrive", "Python26", "python.exe"),
+    #     ("HomeDrive", "Python27", "python.exe"),
+    #     ("HomeDrive", "Python32", "python.exe"),
+    #     ("HomeDrive", "Python33", "python.exe"),
+    #     ("HomeDrive", "Python34", "python.exe"),
+    # ]
 
     def start(self, path):
-        cmd = self.get_path("cmd.exe")
+        # python = self.get_path("Python")
         arguments = self.options.get("arguments", "")
 
-        args = [path] + shlex.split(arguments)
-        return self.execute(cmd, args=args, trigger="file:%s" % path)
+        args = ["C:\\Program Files\\Python37\\python.exe"]
+        args += [path] + shlex.split(arguments)
+        return self.execute("cmd.exe", args=args, trigger="file:%s" % path)
