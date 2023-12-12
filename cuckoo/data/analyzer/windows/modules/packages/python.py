@@ -11,6 +11,7 @@ class Python(Package):
     """Python analysis package."""
 
     PATHS = [
+        ("HomeDrive", "Program Files", "Python37", "python.exe"),
         ("HomeDrive", "Python24", "python.exe"),
         ("HomeDrive", "Python25", "python.exe"),
         ("HomeDrive", "Python26", "python.exe"),
